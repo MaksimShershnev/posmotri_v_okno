@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "stylelint": "^15.10.3"
+  },
+  "name": "posmotri_v_okno",
+  "description": "Проект \"Посмотри в окно\"\r https://github.com/MaksimShershnev/posmotri_v_okno.git",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint **/*.css",
+    "lintfix": "stylelint **/*.css --fix"
+  },
+  "author": "",
+  "license": "ISC"
+}
