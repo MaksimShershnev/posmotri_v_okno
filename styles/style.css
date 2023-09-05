@@ -12,7 +12,7 @@ html {
   margin: auto;
   padding: 133px 30px;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   inline-size: 1200px;
@@ -28,7 +28,8 @@ ul,
 ol,
 li,
 blockquote,
-fieldset {
+fieldset,
+input {
   margin: 0;
   padding: 0;
 }
@@ -65,15 +66,12 @@ ol {
   object-position: center;
 }
 
-/* ----------- Область поиска видео с бильтрами ----------*/
+/* ----------- Область фильтров для поиска видео ----------*/
 
 .search-form {
   display: grid;
   grid-template-columns: 225px 1fr 194px;
   place-items: start;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* возможно придется убрать */
 }
 
 .search-form__fieldset {
@@ -84,7 +82,7 @@ ol {
   inline-size: 100%;
 }
 
-.search-form__fieldset:not(:first-of-type) {
+.search-form__fieldset:nth-of-type(2) {
   justify-self: center;
   width: fit-content;
 }
@@ -99,7 +97,10 @@ ol {
 .search-form__label {
   display: flex;
   gap: 5px;
+  align-items: center;
 }
+
+/* ------------- Поле ввода текста ------------------- */
 
 .search-form__textfield {
   border-inline: none;
@@ -113,25 +114,32 @@ ol {
   -moz-appearance: none;
   appearance: none;
   inline-size: 100%;
+  padding: 1.5px 0; /* Для соответствия макету */
+  font-style: normal;
+  line-height: normal;
 }
 
 .search-form__textfield:focus {
+  outline: none;
+  /*outline: 1px solid #fff;
+  outline-offset: 1px; */
+}
+
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
 .search-form__textfield:active {
   outline: 1px solid #fff;
-  outline-offset: -1px; /* для наложения поверх border */
+  outline-offset: -1px; /* для наложения поверх border-block */
 }
-/*
-.search-form__textfield:focus-visible {
-  outline: 1px solid #fff;
-}*/
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* ------------- Чекбоксы --------------- */
 
 .search-form__checkbox-list {
   display: flex;
@@ -146,7 +154,19 @@ ol {
   border: 1px solid #fff;
 }
 
-/* ------------- Buttons ----------- */
+.search-form__checkbox[type='checkbox']:active
+  + .search-form__pseudo-checkbox::after,
+.search-form__checkbox[type='checkbox']:checked
+  + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  inline-size: 15px;
+  block-size: 15px;
+  margin: 1px auto;
+  background: #fff;
+}
+
+/* -------------- Кнопки ------------- */
 
 .button {
   align-self: flex-end;
@@ -170,6 +190,10 @@ ol {
 }
 
 .button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
