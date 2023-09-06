@@ -12,7 +12,7 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
-  padding: 133px 30px;
+  padding: 211px 30px;
   color: #fff;
   font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -55,13 +55,13 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 711px;
-  height: 386px;
+  inline-size: 711px;
+  block-size: 386px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -84,7 +84,7 @@ ol {
 
 .search-form__fieldset:nth-of-type(2) {
   justify-self: center;
-  width: fit-content;
+  inline-size: fit-content;
 }
 
 .search-form__fieldset-title {
@@ -146,8 +146,8 @@ ol {
 
 .search-form__pseudo-checkbox {
   display: block;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
   border: 1px solid #fff;
 }
 
@@ -198,6 +198,11 @@ ol {
 .button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
+}
+
+.more-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: -3px; /* Чтобы не сжимать кнопку для внешней обводки делаем внутреннюю */
 }
 
 /*------------- Зона details ------------*/
@@ -255,11 +260,6 @@ ol {
   background: #545050;
 }
 
-.content__card-link:focus {
-  /* вырубает стандартную обводку по таб */
-  outline: none;
-}
-
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
@@ -293,8 +293,8 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 174px; /* пришлось уменьшить из за длинного названия Зеленоградск для корректного отображения в мозилле (без горизонтальной прокрутки) */
-  height: 103px;
+  inline-size: 174px; /* пришлось уменьшить из за длинного названия Зеленоградск для корректного отображения в мозилле (без горизонтальной прокрутки) */
+  block-size: 103px;
   object-fit: cover;
   object-position: center;
 }
