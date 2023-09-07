@@ -219,7 +219,6 @@ ol {
 }
 
 .more-button:focus-visible {
-  outline: 1px solid #fff;
   outline-offset: -3px; /* Чтобы не сжимать кнопку для внешней обводки делаем внутреннюю */
 }
 
@@ -254,8 +253,9 @@ ol {
   overflow: auto;
 }
 
-.content__list:focus {
-  outline: none;
+/* Убрал лишний отступ при подгрузке контента*/
+li:empty {
+  display: none;
 }
 
 .content__card-link {
@@ -276,6 +276,10 @@ ol {
 
 .content__card-link:active {
   background: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
 }
 
 .content__card-link:focus-visible {
