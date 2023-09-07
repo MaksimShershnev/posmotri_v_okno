@@ -5,14 +5,13 @@
 }
 
 html {
+  display: flex; /*выравнивание по вертикали */
   block-size: 100%;
-  position: relative;
 }
+
 .page {
-  position: absolute;
-  inset: 0;
   inline-size: 1200px;
-  block-size: 534px;
+  block-size: 534px; /* для выравнивания по вертикали */
   margin: auto;
   padding: 0 30px;
   color: #fff;
