@@ -130,6 +130,14 @@ ol {
   outline-offset: 1px;
 }
 
+/* так как :has() не поддердивается в мозилле, добавляю: */
+@-moz-document url-prefix() {
+  .search-form__textfield:focus-visible {
+    outline: 1px solid #fff;
+    outline-offset: 1px;
+  }
+}
+
 .search-form__textfield:active {
   outline: 1px solid #fff;
   outline-offset: -1px; /* для наложения поверх border-block в .search-form__textfield */
