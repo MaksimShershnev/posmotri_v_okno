@@ -249,14 +249,17 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   overflow: auto;
 }
 
-/* Убрал лишний отступ при подгрузке контента*/
+.content__list-item {
+  padding-bottom: 30px;
+}
+
+/* Убрал лишний отступ при подгрузке контента 
 li:empty {
   display: none;
-}
+} */
 
 .content__card-link {
   display: block;
