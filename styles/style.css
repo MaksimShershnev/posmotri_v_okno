@@ -253,11 +253,13 @@ ol {
   overflow: auto;
 }
 
-.content__list-item {
+/* Убрал лишний отступ при подгрузке контента вместо li:empty */
+
+.content__list-item:not(:last-of-type) {
   padding-bottom: 30px;
 }
 
-/* Убрал лишний отступ при подгрузке контента 
+/* 
 li:empty {
   display: none;
 } */
