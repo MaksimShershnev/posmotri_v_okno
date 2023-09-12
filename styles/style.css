@@ -253,6 +253,14 @@ ol {
   overflow: auto;
 }
 
+.content__list::-webkit-scrollbar {
+  inline-size: 8px;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  background-color: #545050;
+}
+
 /* Убрал лишний отступ при подгрузке контента вместо li:empty */
 
 .content__list-item:not(:last-of-type) {
